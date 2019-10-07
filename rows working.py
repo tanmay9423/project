@@ -20,3 +20,11 @@ print(meanf)
 #while i!=6:
     #print(line0[i])
     #i=i+1
+# Data for plotting
+t = [5,10,15,20,25,30,35,40]
+
+
+fig, ax = plt.subplots()
+ax.plot(t, meanf)
+fig.show()
+
