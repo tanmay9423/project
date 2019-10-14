@@ -20,8 +20,10 @@ X_poly = poly.fit_transform(X)
 poly.fit(X_poly, Y) 
 lin2 = LinearRegression() 
 lin2.fit(X_poly, Y)
+
 print(lin2.predict(poly.fit_transform(X)))
-print(lin2.predict(np.array(poly.fit_transform([[8.0]]))))
+print("Predicted value = ",lin2.predict(np.array(poly.fit_transform([[8.0]])))) #Predict value at 8 secs
+
 # Visualising the Polynomial Regression results 
 plt.scatter(X, Y, color = 'blue')   
 plt.plot(X, lin2.predict(poly.fit_transform(X)), color = 'red') 
