@@ -10,6 +10,7 @@ df = pd.read_csv("C:\\Users\\tanma\\Downloads\\avg readings.csv")
 Y = df['Mean'] 
 X = df['Time']
 
+#Reshaping values of X and Y
 X=X.values.reshape(len(X),1) 
 Y=Y.values.reshape(len(Y),1)
 
@@ -18,16 +19,16 @@ Y=Y.values.reshape(len(Y),1)
 lin = LinearRegression() 
 lin.fit(X, Y)
 print(lin.predict(X))
-#print(lin.predict([8.5])) 
-print(lin.predict(np.array([[8.0]])))
+
+print(lin.predict(np.array([[8.0]])))     #predicting values
+
 # Linear Regression results 
-plt.scatter(X, Y, color = 'blue') 
-  
+
+plt.scatter(X, Y, color = 'blue')  
 plt.plot(X, lin.predict(X), color = 'red') 
 plt.title('Linear Regression') 
 plt.xlabel('Time in seconds') 
-plt.ylabel('Temperature in celsius') 
-  
+plt.ylabel('Temperature in celsius')   
 plt.show()
 
 
